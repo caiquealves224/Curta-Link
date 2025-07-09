@@ -5,7 +5,7 @@ export const encurtar = async (req, res) => {
   // Logic to shorten the URL
   // For example, you could generate a random string and save it in a database
   
-  const shortUrl = generateShortUrl(url);
+  const shortUrl = generateShortUrl();
   
   return res.status(201).json({
     originalUrl: url,

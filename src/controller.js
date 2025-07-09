@@ -1,9 +1,16 @@
-export const encurtar = (req, res) => {
-  // const { url } = req.body;
+import { generateShortUrl } from './service.js';
+
+export const encurtar = async (req, res) => {
+  const { url } = req.body;
   // Logic to shorten the URL
   // For example, you could generate a random string and save it in a database
-  // const shortUrl = generateShortUrl(url);
-  res.status(201).json({ });
+  
+  const shortUrl = generateShortUrl(url);
+  
+  return res.status(201).json({
+    originalUrl: url,
+    shortUrl: shortUrl
+  });
 }
 
 export const redirecionar = (req, res) => {

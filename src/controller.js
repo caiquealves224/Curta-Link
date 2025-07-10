@@ -35,7 +35,7 @@ export const listarUrls = (req, res) => {
     const urlsArray = Array.from(urls.entries()).map(([shortUrl, originalUrl]) => ({
       shortUrl,
       originalUrl,
-      shortUrlComplete: process.env.APP_URL + ':' + process.env.APP_PORT + '/' + shortUrl
+      shortUrlComplete: process.env.APP_URL + '/' + shortUrl
     }));
 
     return res.status(200).json({

@@ -9,7 +9,7 @@ export const encurtar = async (req, res) => {
     
     return res.status(201).json({
       originalUrl: url,
-      shortUrl: process.env.APP_URL + ':' + process.env.APP_PORT + '/' + shortUrl
+      shortUrl: process.env.APP_URL + '/' + shortUrl
     });
   } catch (error) {
     return res.status(400).json({ 

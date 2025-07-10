@@ -1,5 +1,4 @@
-import { generateShortUrl } from './service.js';
-import { urls } from './repository.js';
+import { generateShortUrl, listUrls, getOriginalUrl } from './service.js';
 
 export const encurtar = async (req, res) => {
   try {
@@ -21,23 +20,21 @@ export const encurtar = async (req, res) => {
 export const redirecionar = (req, res) => {
   const { shortUrl } = req.params;
 
-  const originalUrl = urls.get(shortUrl);
-
-  if (originalUrl) {
+  try {
+    const originalUrl = getOriginalUrl(shortUrl);
     res.redirect(originalUrl);
-  } else {
+  } catch (error) {
     res.status(404).json({ mensagem: 'URL não encontrada.' });
   }
 }
 
 export const listarUrls = (req, res) => {
   try {
-    const urlsArray = Array.from(urls.entries()).map(([shortUrl, originalUrl]) => ({
-      shortUrl,
+    const urlsArray = listUrls().map(({ urlId, originalUrl }) => ({
+      urlId,
       originalUrl,
-      shortUrlComplete: process.env.APP_URL + '/' + shortUrl
+      shortUrl: process.env.APP_URL + '/' + urlId
     }));
-
     return res.status(200).json({
       total: urlsArray.length,
       urls: urlsArray

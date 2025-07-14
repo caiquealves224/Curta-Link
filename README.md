@@ -13,4 +13,4 @@ Hospedado em https://curta-link.onrender.com
 
 Frontend: 
 - React
-- Vite 
+- Vite

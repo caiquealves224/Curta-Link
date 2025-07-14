@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { urls } from './repository.js';
+import { urls, listUrls } from './repository.js';
 
 // Função para validar e corrigir URL
 const validateAndFixUrl = (url) => {
@@ -26,8 +26,6 @@ export const generateShortUrl = (url) => {
 
   urls.set(shortUrl, validatedUrl);
 
-  console.log(urls);
-
   return shortUrl;
 }
 
@@ -41,9 +39,6 @@ export const getOriginalUrl = (shortUrl) => {
   return originalUrl;
 }
 
-export const listUrls = () => {
-  return Array.from(urls.entries()).map(([urlId, originalUrl]) => ({
-    urlId,
-    originalUrl
-  }));
+export const listarTodasUrls = () => {
+  return listUrls();
 }

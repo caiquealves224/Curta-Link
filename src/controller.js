@@ -1,4 +1,4 @@
-import { generateShortUrl, listUrls, getOriginalUrl } from './service.js';
+import { generateShortUrl, getOriginalUrl, listarTodasUrls } from './service.js';
 
 export const encurtar = async (req, res) => {
   try {
@@ -30,7 +30,7 @@ export const redirecionar = (req, res) => {
 
 export const listarUrls = (req, res) => {
   try {
-    const urlsArray = listUrls().map(({ urlId, originalUrl }) => ({
+    const urlsArray = listarTodasUrls().map(({ urlId, originalUrl }) => ({
       urlId,
       originalUrl,
       shortUrl: process.env.APP_URL + '/' + urlId

@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { urls, listUrls } from './repository.js';
+import { urls, listUrls } from '../repositories/repository.js';
 
 // Função para validar e corrigir URL
 const validateAndFixUrl = (url) => {

@@ -1,4 +1,4 @@
-import { generateShortUrl, getOriginalUrl, listarTodasUrls } from './service.js';
+import { generateShortUrl, getOriginalUrl, listarTodasUrls } from '../services/service.js';
 
 export const encurtar = async (req, res) => {
   try {

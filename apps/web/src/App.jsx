@@ -4,13 +4,28 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [shortUrl, setShortUrl] = useState('')
+  const [urlInput, setUrlInput] = useState('')
 
   const handleClick = () => {
-    fetch('api/urls')
+    if (!urlInput.trim()) {
+      alert('Por favor, insira uma URL válida')
+      return
+    }
+    
+    fetch(`${import.meta.env.VITE_API_URL}/shorten`, {
+      method: 'POST',
+      headers: {    
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ url: urlInput })
+    })
       .then(response => response.json())
       .then(data => {
         console.log('Data fetched:', data)
+        if (data.shortUrl) {
+          setShortUrl(data.shortUrl)
+        }
       })
       .catch(error => {
         console.error('Error fetching data:', error)
@@ -29,13 +44,25 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <button onClick={handleClick}>fetch</button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
+      </div>
+      <div>
+        <input 
+          type='text' 
+          placeholder='cole seu link aqui' 
+          value={urlInput}
+          onChange={(e) => setUrlInput(e.target.value)}
+        />
+        <button onClick={handleClick}>encurtar</button>
+        <input 
+          type='text' 
+          value={shortUrl || ''} 
+          readOnly 
+          placeholder='sua URL encurtada aparecerá aqui'
+        />
+
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more

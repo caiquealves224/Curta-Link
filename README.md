@@ -23,6 +23,7 @@ Criar uma API de encurtamento de links com:
 
 Você pode testar a aplicação em:  
 API: 👉 [https://curta-link.onrender.com](https://curta-link.onrender.com)
+
 FRONT: 👉 [https://curta-link-web.onrender.com](https://curta-link-web.onrender.com)
 
 ## 📦 Como executar localmente
@@ -35,8 +36,8 @@ git clone https://github.com/seu-usuario/curta-link.git
 cd curta-link
 
 # Instale as dependências
-npm install
+pnpm install
 
 # Inicie o servidor
-npm run dev
+pnpm -r run dev
 

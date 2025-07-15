@@ -22,7 +22,8 @@ Criar uma API de encurtamento de links com:
 ## 🌐 Aplicação Online
 
 Você pode testar a aplicação em:  
-👉 [https://curta-link.onrender.com](https://curta-link.onrender.com)
+API: 👉 [https://curta-link.onrender.com](https://curta-link.onrender.com)
+FRONT: 👉 [https://curta-link-web.onrender.com](https://curta-link-web.onrender.com)
 
 ## 📦 Como executar localmente
 

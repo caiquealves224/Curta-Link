@@ -30,8 +30,8 @@ Você pode testar a aplicação em:
 # Clone o repositório
 git clone https://github.com/seu-usuario/curta-link.git
 
-# Acesse a pasta do backend
-cd backend
+# Acesse a pasta do curta-link
+cd curta-link
 
 # Instale as dependências
 npm install

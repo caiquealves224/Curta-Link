@@ -1,0 +1,26 @@
+{
+  "name": "curta-link",
+  "version": "1.0.0",
+  "description": "Encurtador de link",
+  "homepage": "https://github.com/caiquealves224/curta-link#readme",
+  "bugs": {
+    "url": "https://github.com/caiquealves224/curta-link/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiquealves224/curta-link.git"
+  },
+  "license": "MIT",
+  "author": "Caique Alves (caiquealves224@gmail.com)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch --env-file=.env index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nanoid": "^5.1.5"
+  }
+}

@@ -8,6 +8,18 @@ Criar uma API de encurtamento de links com:
 - Persistência interna (sem uso de APIs externas), garantindo **baixa latência** e **controle total sobre os dados**;
 - Utilização mínima de bibliotecas externas para manter o projeto **leve**, **seguro** e **fácil de manter**.
 
+## 🧱 Estrutura do Projeto
+Este repositório é um monorepo gerenciado com pnpm workspaces. Isso permite gerenciar múltiplos pacotes (como o frontend e o backend) de forma organizada e eficiente, compartilhando dependências comuns e facilitando o desenvolvimento local.
+
+```perl
+curta-link/
+├── apps/
+│   ├── api/        # Backend (Node.js + TypeScript)
+│   └── web/        # Frontend (React + Vite)
+├── package.json    # Configuração dos workspaces
+├── pnpm-workspace.yaml
+```
+
 ## 🧠 Tecnologias Utilizadas
 
 ### 🔧 Backend

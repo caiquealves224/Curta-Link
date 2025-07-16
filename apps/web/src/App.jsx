@@ -43,12 +43,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <div>
+      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <input 
           type='text' 
           placeholder='cole seu link aqui' 
@@ -56,17 +51,8 @@ function App() {
           onChange={(e) => setUrlInput(e.target.value)}
         />
         <button onClick={handleClick}>encurtar</button>
-        <input 
-          type='text' 
-          value={shortUrl || ''} 
-          readOnly 
-          placeholder='sua URL encurtada aparecerá aqui'
-        />
-
+        <p>URL Encurtada: {shortUrl || 'Nenhuma URL encurtada ainda'}</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

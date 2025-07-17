@@ -42,7 +42,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Curto - Link</h1>
       <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <input 
           type='text' 

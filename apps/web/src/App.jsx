@@ -51,7 +51,34 @@ function App() {
           onChange={(e) => setUrlInput(e.target.value)}
         />
         <button onClick={handleClick}>encurtar</button>
-        <p>URL Encurtada: {shortUrl || 'Nenhuma URL encurtada ainda'}</p>
+        <p>
+          URL Encurtada: {shortUrl || 'Nenhuma URL encurtada ainda'}
+          <button
+              style={{ marginLeft: '10px' }}
+              onClick={() => {
+                navigator.clipboard.writeText(shortUrl);
+                const toast = document.createElement('div');
+                toast.textContent = 'Link copiado!';
+                toast.style.cssText = `
+                  position: fixed;
+                  bottom: 20px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  background-color: #333;
+                  color: white;
+                  padding: 10px 20px;
+                  border-radius: 5px;
+                  z-index: 1000;
+                `;
+                document.body.appendChild(toast);
+                setTimeout(() => {
+                  toast.remove();
+                }, 3000);
+              }}
+            >
+              Copiar
+          </button>
+        </p>
       </div>
     </>
   )

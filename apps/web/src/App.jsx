@@ -50,10 +50,11 @@ function App() {
           value={urlInput}
           onChange={(e) => setUrlInput(e.target.value)}
         />
-        <button onClick={handleClick}>encurtar</button>
+        <button onClick={handleClick} disabled={!urlInput.trim()}>encurtar</button>
         <p>
           URL Encurtada: {shortUrl || 'Nenhuma URL encurtada ainda'}
           <button
+              disabled={!shortUrl}
               style={{ marginLeft: '10px' }}
               onClick={() => {
                 navigator.clipboard.writeText(shortUrl);

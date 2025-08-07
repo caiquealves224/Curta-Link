@@ -52,7 +52,7 @@ function App() {
         />
         <button onClick={handleClick} disabled={!urlInput.trim()}>encurtar</button>
         <p>
-          URL Encurtada: {shortUrl || 'Nenhuma URL encurtada ainda'}
+          <span> {shortUrl || 'Nenhuma URL encurtada ainda'} </span>
           <button
               disabled={!shortUrl}
               style={{ marginLeft: '10px' }}
